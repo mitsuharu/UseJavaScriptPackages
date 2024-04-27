@@ -61,7 +61,7 @@ context に対して、Webpack で設定したモジュール名や関数名を�
 ```swift
 let module = context.objectForKeyedSubscript("Module")
 let bridge = module?.objectForKeyedSubscript("Bridge")
-let function = bridge?.objectForKeyedSubscript("mean")
+let function = bridge?.objectForKeyedSubscript("hogehoge")
 let result =  function?.call(withArguments: [[1, 2, 3])
 ```
 
