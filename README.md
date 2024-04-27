@@ -44,10 +44,10 @@ yarn build
 
 ```swift
 guard
-	let path = Bundle.main.path(forResource: "Module.bundle.js", ofType: nil),
-	let contents = try? String(contentsOfFile: path)
+    let path = Bundle.main.path(forResource: "Module.bundle.js", ofType: nil),
+    let contents = try? String(contentsOfFile: path)
 else {
-	throw JavaScriptBridgeError.bundleNotFound
+    throw JavaScriptBridgeError.bundleNotFound
 }
         
 let context: JSContext = JSContext(virtualMachine: JSVirtualMachine())
@@ -62,8 +62,7 @@ context に対して、Webpack で設定したモジュール名や関数名を�
 let module = context.objectForKeyedSubscript("Module")
 let bridge = module?.objectForKeyedSubscript("Bridge")
 let function = bridge?.objectForKeyedSubscript("mean")
-
- let result =  function?.call(withArguments: [[1, 2, 3])
+let result =  function?.call(withArguments: [[1, 2, 3])
 ```
 
 
