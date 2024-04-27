@@ -14,6 +14,8 @@
 		9B12BF552BD507C70065DA76 /* UseJavaScriptPackagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF542BD507C70065DA76 /* UseJavaScriptPackagesTests.swift */; };
 		9B12BF5F2BD507C70065DA76 /* UseJavaScriptPackagesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF5E2BD507C70065DA76 /* UseJavaScriptPackagesUITests.swift */; };
 		9B12BF612BD507C70065DA76 /* UseJavaScriptPackagesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF602BD507C70065DA76 /* UseJavaScriptPackagesUITestsLaunchTests.swift */; };
+		9B12BF6F2BD50A490065DA76 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF6E2BD50A490065DA76 /* Bridge.swift */; };
+		9B12BF712BD51B640065DA76 /* Bridge.bundle.js in Resources */ = {isa = PBXBuildFile; fileRef = 9B12BF702BD51B640065DA76 /* Bridge.bundle.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		9B12BF5A2BD507C70065DA76 /* UseJavaScriptPackagesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseJavaScriptPackagesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B12BF5E2BD507C70065DA76 /* UseJavaScriptPackagesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseJavaScriptPackagesUITests.swift; sourceTree = "<group>"; };
 		9B12BF602BD507C70065DA76 /* UseJavaScriptPackagesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseJavaScriptPackagesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9B12BF6E2BD50A490065DA76 /* Bridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bridge.swift; sourceTree = "<group>"; };
+		9B12BF702BD51B640065DA76 /* Bridge.bundle.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = Bridge.bundle.js; path = "js-packages/dist/Bridge.bundle.js"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 		9B12BF422BD507C20065DA76 /* UseJavaScriptPackages */ = {
 			isa = PBXGroup;
 			children = (
+				9B12BF6D2BD50A270065DA76 /* JSPackages */,
 				9B12BF432BD507C20065DA76 /* UseJavaScriptPackagesApp.swift */,
 				9B12BF452BD507C20065DA76 /* ContentView.swift */,
 				9B12BF472BD507C40065DA76 /* Assets.xcassets */,
@@ -125,6 +130,15 @@
 				9B12BF602BD507C70065DA76 /* UseJavaScriptPackagesUITestsLaunchTests.swift */,
 			);
 			path = UseJavaScriptPackagesUITests;
+			sourceTree = "<group>";
+		};
+		9B12BF6D2BD50A270065DA76 /* JSPackages */ = {
+			isa = PBXGroup;
+			children = (
+				9B12BF702BD51B640065DA76 /* Bridge.bundle.js */,
+				9B12BF6E2BD50A490065DA76 /* Bridge.swift */,
+			);
+			path = JSPackages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B12BF712BD51B640065DA76 /* Bridge.bundle.js in Resources */,
 				9B12BF4B2BD507C50065DA76 /* Preview Assets.xcassets in Resources */,
 				9B12BF482BD507C40065DA76 /* Assets.xcassets in Resources */,
 			);
@@ -259,6 +274,7 @@
 			files = (
 				9B12BF462BD507C20065DA76 /* ContentView.swift in Sources */,
 				9B12BF442BD507C20065DA76 /* UseJavaScriptPackagesApp.swift in Sources */,
+				9B12BF6F2BD50A490065DA76 /* Bridge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

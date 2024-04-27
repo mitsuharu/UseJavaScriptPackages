@@ -1,0 +1,17 @@
+{
+  "name": "bridge",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --progress --color"
+  },
+  "dependencies": {
+    "just-mean": "^2.2.0",
+    "just-random": "^3.2.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
