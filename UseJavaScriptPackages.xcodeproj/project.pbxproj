@@ -18,6 +18,8 @@
 		9B12BF792BDCE3F50065DA76 /* BridgeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF782BDCE3F50065DA76 /* BridgeError.swift */; };
 		9B12BF7C2BDCFC280065DA76 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF7B2BDCFC280065DA76 /* MainView.swift */; };
 		9B12BF7E2BDCFC370065DA76 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B12BF7D2BDCFC370065DA76 /* MainViewModel.swift */; };
+		9B12BF802BDDDFD70065DA76 /* receipt.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9B12BF7F2BDDDFD70065DA76 /* receipt.txt */; };
+		9B12BF822BDDE94F0065DA76 /* receipt-noimage.txt in Resources */ = {isa = PBXBuildFile; fileRef = 9B12BF812BDDE94F0065DA76 /* receipt-noimage.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		9B12BF782BDCE3F50065DA76 /* BridgeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeError.swift; sourceTree = "<group>"; };
 		9B12BF7B2BDCFC280065DA76 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		9B12BF7D2BDCFC370065DA76 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		9B12BF7F2BDDDFD70065DA76 /* receipt.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = receipt.txt; sourceTree = "<group>"; };
+		9B12BF812BDDE94F0065DA76 /* receipt-noimage.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "receipt-noimage.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +155,8 @@
 			children = (
 				9B12BF7B2BDCFC280065DA76 /* MainView.swift */,
 				9B12BF7D2BDCFC370065DA76 /* MainViewModel.swift */,
+				9B12BF7F2BDDDFD70065DA76 /* receipt.txt */,
+				9B12BF812BDDE94F0065DA76 /* receipt-noimage.txt */,
 			);
 			path = MainView;
 			sourceTree = "<group>";
@@ -262,6 +268,8 @@
 				9B12BF4B2BD507C50065DA76 /* Preview Assets.xcassets in Resources */,
 				9B12BF772BDCE2AE0065DA76 /* Module.bundle.js in Resources */,
 				9B12BF482BD507C40065DA76 /* Assets.xcassets in Resources */,
+				9B12BF802BDDDFD70065DA76 /* receipt.txt in Resources */,
+				9B12BF822BDDE94F0065DA76 /* receipt-noimage.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

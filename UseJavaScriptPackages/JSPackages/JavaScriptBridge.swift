@@ -8,10 +8,9 @@
 import Foundation
 import JavaScriptCore
 
-/*
- NPM パッケージを Swift から呼び出す https://zenn.dev/platina/articles/1e4316e3f632b6
+/**
+ JavaScript の npm ライブラリを Swift から実行する
  */
-
 final class JavaScriptBridge {
     
     private let context: JSContext = JSContext(virtualMachine: JSVirtualMachine())
@@ -30,25 +29,36 @@ final class JavaScriptBridge {
     }
     
     private func setUp() throws {
-        
-        guard 
+        // バンドルされた js ファイルを取得する
+        guard
             let path = Bundle.main.path(forResource: bundleFileName, ofType: nil),
             let contents = try? String(contentsOfFile: path)
         else {
             throw JavaScriptBridgeError.bundleNotFound
         }
         
-        context.evaluateScript(contents)
-                
         // エラーハンドリング
         context.exceptionHandler = { context, error in
             guard let error = error,
                   let message = error.toString() else {
                 return
             }
-            print("JavaScript Error: \(message)")
+            print("JSContext#exceptionHandler Error: \(message)")
         }
         
+        // Can't find variable: process の対応
+        let processPolyfill = """
+        var process = {
+            env: {},
+            nextTick: function(fn) { setTimeout(fn, 0) }
+        };
+        """
+        context.evaluateScript(processPolyfill)
+
+        // バンドルされた js ファイルの読み込み
+        context.evaluateScript(contents)
+        
+        // ブリッヂを取得する
         guard
             let module = context.objectForKeyedSubscript(moduleName),
             let bridge = module.objectForKeyedSubscript(bundleName)
@@ -86,6 +96,26 @@ final class JavaScriptBridge {
             throw JavaScriptBridgeError.argumentFailed
         }
         return result.toDouble()
+    }
+    
+    func runTransformCommand(_ arg: String) throws -> Any {
+        guard let function = getFunction(name: "transformCommand") else {
+            throw JavaScriptBridgeError.functionFailed
+        }
+        guard let result =  function.call(withArguments: [arg]) else {
+            throw JavaScriptBridgeError.argumentFailed
+        }
+        return result
+    }
+    
+    func runTransformSvg(_ arg: String) throws -> Any {
+        guard let function = getFunction(name: "transformSvg") else {
+            throw JavaScriptBridgeError.functionFailed
+        }
+        guard let result =  function.call(withArguments: [arg]) else {
+            throw JavaScriptBridgeError.argumentFailed
+        }
+        return result
     }
 }
 
