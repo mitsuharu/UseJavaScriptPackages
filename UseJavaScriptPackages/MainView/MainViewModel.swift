@@ -31,4 +31,43 @@ final class MainViewModel {
         }
     }
     
+    func receiptLine() {
+        // command 作成（画像があると失敗する）
+        do {
+            guard
+                let path = Bundle.main.path(forResource: "receipt-noimage", ofType: "txt"),
+                let text = try? String(contentsOfFile: path)
+            else {
+                return
+            }
+                        
+            let command = try bridge.runTransformCommand(text)
+            
+            print("=== command ===")
+            print(command)
+        } catch {
+            print(error)
+        }
+        
+        // svg 作成
+        do {
+            guard
+                let path = Bundle.main.path(forResource: "receipt", ofType: "txt"),
+                let text = try? String(contentsOfFile: path)
+            else {
+                return
+            }
+            let svg = try bridge.runTransformSvg(text)
+                        
+            print("=== svg ===")
+            print(svg)
+        } catch {
+            print(error)
+        }
+    }
+    
+    init() {
+        receiptLine()
+    }
+    
 }
