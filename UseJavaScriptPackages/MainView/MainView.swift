@@ -16,9 +16,9 @@ struct MainView: View {
             viewModel.mean([1, 2, 3, 4, 5])
         }
         if let value = viewModel.meanValue {
-            Text("meanValue is \(value)")
+            Text("meanValue of [1, 2, 3, 4, 5] is \(value)")
         } else {
-            Text("meanValue is none")
+            Text("meanValue of [1, 2, 3, 4, 5]  is none")
         }
         
         Spacer().frame(height: 30)
@@ -27,9 +27,9 @@ struct MainView: View {
             viewModel.random([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
         }
         if let value = viewModel.randomValue {
-            Text("randomValue is \(value)")
+            Text("randomValue of 0-9 is \(value)")
         } else {
-            Text("randomValue is none")
+            Text("randomValue of 0-9 is none")
         }
      
     }

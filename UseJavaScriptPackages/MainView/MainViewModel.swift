@@ -67,7 +67,7 @@ final class MainViewModel {
     }
     
     init() {
-        receiptLine()
+//        receiptLine()
     }
     
 }
