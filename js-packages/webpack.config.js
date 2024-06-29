@@ -3,7 +3,7 @@ const webpack = require('webpack')
 
 module.exports = {
     mode: 'production',
-    entry: './index.js',
+    entry: './src/index.ts', // エントリーポイント
     output: {
         path: path.resolve(__dirname, "dist"),
         filename: "Module.bundle.js",
@@ -12,8 +12,9 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /\.js$/,
-            exclude: /node_modules(?!(\/|\\)(PACKAGE_NAME))/,  
+            test:  /\.tsx?$/, // .ts または .tsx ファイルを対象
+            use: 'ts-loader',
+            exclude: /node_modules/,
         }]
     },
     plugins: [
