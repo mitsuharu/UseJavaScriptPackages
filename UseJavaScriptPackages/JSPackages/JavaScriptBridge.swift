@@ -82,7 +82,14 @@ final class JavaScriptBridge {
         guard let function = getFunction(name: "mean") else {
             throw JavaScriptBridgeError.functionFailed
         }
-        guard let result =  function.call(withArguments: [arg]) else {
+//        let result = function.call(withArguments: [arg])
+//        if let exception = context.exception {
+//            let message = exception.toString() ?? ""
+//            print(message)
+//            context.exception = nil
+//            throw JavaScriptBridgeError.argumentFailed
+//        }
+        guard let result = function.call(withArguments: [arg]) else {
             throw JavaScriptBridgeError.argumentFailed
         }
         return result.toDouble()
